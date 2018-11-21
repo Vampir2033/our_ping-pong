@@ -1,14 +1,15 @@
+//расчет изменения угла 
 #include "info.h"
 
 float angleChange(float angFw, float angOfObst)
 {
-	float angBack;
-	srand(time(NULL));
-	if (angOfObst == 0) {
-		angBack = (-1)*angFw;
+	float angBack;		
+	srand(time(NULL));				//для случайного изменения угла при столкновении с платформой
+	if (angOfObst == 0) {			//при столкновении с верхней/нижней границей поля
+		angBack = (-1)*angFw;		//отражение в обратную сторону по y, по х движение сохраняется
 	}
-	else {
-		angBack = (-1)*angFw + ((rand() % 5000 + 1000)/1000);
+	else {														//отражение от платформ
+		angBack = (-1)*angFw + ((rand() % 1200 + 1000)/1000);	//угол отражения случайно немного меняется
 	}
-	return angBack;
+	return angBack;					//возврат нового угла движения
 }
