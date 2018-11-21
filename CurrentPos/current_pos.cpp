@@ -1,30 +1,48 @@
 #include "stdafx.h"
 #include "WindowsProject1.h"
 
-
+// объявление класса поля
 class  Field
 {
-    int widthField = const(10);          
-    public:
-
+ private:
+ 	int widthField; // ширина поля          
+ public:
+	int get_width(); // объявление метода получения ширины поля
 }
 
 class Platform
 {
-	int time_last_change, current_width, speed, current_pos;
-	void  InfoWithField();
+private:
+	double 	time_last_change, 	// время последнего изменения
+		current_width, 		// текущая ширина поля
+		speed, 			// Скорость дощечки
+		current_pos,		// Текущие координаты
+		platform_width;		// ширина дощечки
+public:
+	//запрос информации о ширине поля у класса поле будет происходить в конструкторе
+	Platform();
 	{
-		widthField = current_width = const(10);      //запрос информации о ширине поля у класса поле
+		widthField = get_width();
+		time_last_change = current_time;
+		speed = 15; // это к примеру
+		platform_width = 10; // тоже к примеру
+		current_pos = widthField / 2 - platform_width;
 	}
-	void ChekMove                                  //Проверка на то двигался ли предмет
+	
+	/*Проверка на то двигался ли предмет
+	возвращаемые значения:
+		1 - движение вправо
+		-1 - движение влево
+		0 - движения нет */
+	int direction_of_travel(); // вот это называется объявление функции                       
 
-		void UpdatePhysicsPlatform()                //движение предмета
+	// метод вычисляет новую координату платформы
+	void UpdatePhysicsPlatform()
 	{
-
-		while (ChekMove = 1; int ChekMove = 1; a++)     //цикл с проверкой на движение предмета и выдачей текущей позиции
-		{
-			last_time_change = current_time - last_time
-				current_pos = speed * time_last_change
+		int direction = 0;
+		if(direction = direction_of_travel()){
+			current_pos += speed * (current_time - time_last_change) * direction; // смещение платформы
 		}
+		last_time_change = current_time; // обновление времени
 	}
 }
