@@ -1,3 +1,4 @@
+//инфа о координатах и нужные библиотеки
 #pragma once
 #include <math.h>
 #include <cstdlib>
@@ -7,3 +8,4 @@ struct coord {
 	float x;
 	float y;
 };
+
