@@ -20,3 +20,5 @@ void timeShift() {
         digits[1] = hour % 10;
       }
     }
+  }
+}
